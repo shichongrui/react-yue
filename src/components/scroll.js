@@ -1,4 +1,4 @@
-const { Scroll } = require('gui')
+const { Scroll, Container } = require('gui')
 const Base = require('./base')
 const { warn } = require('./log')
 const { shoudUpdate, win32 } = require('../utils')
@@ -6,6 +6,10 @@ const { shoudUpdate, win32 } = require('../utils')
 module.exports = class Wrapper extends Base {
   constructor(props) {
     super(Scroll.create())
+
+    this.contentView = Container.create()
+    this.contentView.setStyle({ flex: 1 })
+    this._ele.setContentView(this.contentView)
 
     this.update(null, props)
   }
@@ -28,11 +32,17 @@ module.exports = class Wrapper extends Base {
   }
 
   addChildView(child) {
-    this._ele.setContentView(child._ele)
+    this.contentView.addChildView(child)
+    this._ele.setContentSize(this.contentView.getPreferredSize())
   }
 
-  // eslint-disable-next-line
-  insertBefore() {
-    warn('insertBefore of scroll in a non-op')
+  removeChildView(child) {
+    this.contentView.removeChildView(child)
+    this._ele.setContentSize(this.contentView.getPreferredSize())
+  }
+
+  insertBefore(child, beforeChild) {
+    this.contentView.insertBefore(child, beforeChild)
+    this._ele.setContentSize(this.contentView.getPreferredSize())
   }
 }
