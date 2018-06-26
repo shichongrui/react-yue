@@ -3,7 +3,7 @@ const Base = require('./base')
 const { warn } = require('./log')
 const { shouldUpdate, win32 } = require('../utils')
 
-module.exports = class Wrapper extends Base {
+module.exports = class ScrollWrapper extends Base {
   constructor(props) {
     super(Scroll.create())
 

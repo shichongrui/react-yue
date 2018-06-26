@@ -2,7 +2,7 @@ const { TextEdit } = require('gui')
 const Base = require('./base')
 const { shouldUpdate, win32 } = require('../utils')
 
-module.exports = class Wrapper extends Base {
+module.exports = class TextEditWrapper extends Base {
   constructor(props) {
     super(TextEdit.create())
 

@@ -2,7 +2,7 @@ const { Vibrant } = require('gui')
 const Container = require('./container')
 const { shouldUpdate } = require('../utils')
 
-module.exports = class Wrapper extends Container {
+module.exports = class VibrantWrapper extends Container {
   constructor(props) {
     super(props, Vibrant.create())
 

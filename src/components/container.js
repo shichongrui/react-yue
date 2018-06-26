@@ -1,7 +1,7 @@
 const { Container } = require('gui')
 const Base = require('./base')
 
-module.exports = class Wrapper extends Base {
+module.exports = class ContainerWrapper extends Base {
   constructor(props, ele) {
     super(ele || Container.create())
 

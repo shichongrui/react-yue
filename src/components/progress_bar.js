@@ -2,7 +2,7 @@ const { ProgressBar } = require('gui')
 const Base = require('./base')
 const { shouldUpdate } = require('../utils')
 
-module.exports = class Wrapper extends Base {
+module.exports = class ProgressBarWrapper extends Base {
   constructor(props) {
     super(ProgressBar.create())
 

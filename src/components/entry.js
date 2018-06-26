@@ -6,7 +6,7 @@ const Base = require('./base')
 //   password: 'password',
 // }
 
-module.exports = class Wrapper extends Base {
+module.exports = class EntryWrapper extends Base {
   constructor(props) {
     const { type } = props
     const element = type ? Entry.createType(type) : Entry.create()
