@@ -6,19 +6,18 @@ const { win32 } = require('../../utils')
 describe('scroll', () => {
   it('should render the component correctly', done => {
     createTestSuite(render => {
-      const contentSize = { width: 100, height: 100 }
       const overlayScrollbar = true
       const hpolicy = 'never'
       const vpolicy = 'always'
+      const containerSize = { width: 100, height: 100 }
 
       const ele = (
         <scroll
-          contentSize={contentSize}
           overlayScrollbar={overlayScrollbar}
           hpolicy={hpolicy}
           vpolicy={vpolicy}
         >
-          <container />
+          <container style={containerSize} />
         </scroll>
       )
 
@@ -28,8 +27,10 @@ describe('scroll', () => {
         const size = scroll.getContentSize()
         // NOTE: The value may be not accurate in windows
         if (!win32) {
-          expect(size.width).toBe(contentSize.width)
-          expect(size.height).toBe(contentSize.height)
+          // The content size should be determined by the scroll views
+          // children
+          expect(size.width).toBe(containerSize.width)
+          expect(size.height).toBe(containerSize.height)
         }
         // expect(scroll.isOverlayScrollbar()).toBe(overlayScrollbar)
         const policies = scroll.getScrollbarPolicy()

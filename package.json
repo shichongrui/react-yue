@@ -20,6 +20,7 @@
     "react": "^16.2.0"
   },
   "dependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "parse-color": "^1.0.0",
     "react-reconciler": "^0.11.0"
   },
@@ -42,6 +43,9 @@
     "presets": [
       "es2015",
       "react"
+    ],
+    "plugins": [
+      "transform-class-properties"
     ]
   },
   "jest": {
