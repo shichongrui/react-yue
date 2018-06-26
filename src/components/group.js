@@ -3,7 +3,7 @@ const Base = require('./base')
 const { STRICT_CHECK, warn } = require('../utils')
 const { shoudUpdate } = require('../utils')
 
-module.exports = class Wrapper extends Base {
+module.exports = class GroupWrapper extends Base {
   constructor(props) {
     super(Group.create(''))
 

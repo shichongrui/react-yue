@@ -2,7 +2,7 @@ const { Label } = require('gui')
 const Base = require('./base')
 const { shoudUpdate } = require('../utils')
 
-module.exports = class Wrapper extends Base {
+module.exports = class LabelWrapper extends Base {
   constructor(props) {
     super(Label.create(''))
 

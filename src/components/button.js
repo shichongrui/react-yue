@@ -3,7 +3,7 @@ const Base = require('./base')
 const { shoudUpdate } = require('../utils')
 
 // TODO: add button style and border
-module.exports = class Wrapper extends Base {
+module.exports = class ButtonWrapper extends Base {
   constructor(props) {
     super(Button.create({
       title: '',
