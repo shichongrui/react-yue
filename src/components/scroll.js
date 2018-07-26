@@ -1,6 +1,5 @@
 const { Scroll, Container } = require('gui')
 const Base = require('./base')
-const { warn } = require('./log')
 const { shouldUpdate, win32 } = require('../utils')
 
 module.exports = class ScrollWrapper extends Base {

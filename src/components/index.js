@@ -7,6 +7,7 @@ const scroll = require('./scroll')
 const label = require('./label')
 const textedit = require('./text_edit')
 const vibrant = require('./vibrant')
+const image = require('./image')
 
 const Components = {
   button,
@@ -18,6 +19,7 @@ const Components = {
   label,
   textedit,
   vibrant,
+  image
 }
 
 function hasComponent(type) {
