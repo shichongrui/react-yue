@@ -45,13 +45,13 @@ class Test extends Component {
             {this.state.clicked && <label text='You clicked it!' />}
           </container>
           <container style={{ padding: 50, height: 500 }}>
-            <entry onChange={(value) => this.setState({ text: value })} onSubmit={() => this.setState({ submitted: true })}/>
+            <entry onTextChange={(e) => this.setState({ text: e.getText() })} onActivate={() => this.setState({ submitted: true })}/>
             <label text={`Text: ${this.state.text}`} />
             {this.state.submitted && <label text='Submitted!' />}
           </container>
-          {/* <container style={{ padding: 50 }}>
-            <image source={{ path: './examples/Test/photo.jpg' }} width={200} height={200} />
-          </container> */}
+          <container style={{ padding: 50 }}>
+            <image source={{ path: './examples/ComponentTests/300x200.jpg' }} width={300} height={200} />
+          </container>
           {/* <container style={{ padding: 50 }}>
             <menu
               label={this.state.hasSelected ? this.state.selectedLabel : 'Press for a menu'}
@@ -66,10 +66,15 @@ class Test extends Component {
             <progressbar value={40} />
           </container>
           <container style={{ padding: 50 }}>
-            <image source={{ path: './examples/ComponentTests/300x200.jpg' }} width={300} height={200} />
-            {/* <container vibrant material='light' blendingMode='within-window' style={{ padding: 50, height: 200 }}>
-              <text>This text be on something vibrant</text>
-            </container> */}
+            <image
+              style={{ position: 'absolute', top: 50, left: 50 }}
+              source={{ path: './examples/ComponentTests/300x200.jpg' }}
+              width={300}
+              height={200}
+            />
+            <container vibrant material='dark' blendingMode='within-window' style={{ padding: 50, height: 200 }}>
+              <label text='This text be on something vibrant' />
+            </container>
           </container>
           {/* <container>
             <browser style={{ height: 400 }} url='https://google.com' />
