@@ -6,7 +6,6 @@ const progressbar = require('./progress_bar')
 const scroll = require('./scroll')
 const label = require('./label')
 const textedit = require('./text_edit')
-const vibrant = require('./vibrant')
 const image = require('./image')
 
 const Components = {
@@ -18,7 +17,6 @@ const Components = {
   scroll,
   label,
   textedit,
-  vibrant,
   image
 }
 
